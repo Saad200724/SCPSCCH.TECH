@@ -3,6 +3,7 @@ import { ArrowRight, Cpu, Code2, Globe, Video, Palette } from "lucide-react";
 import CLI from "@/components/CLI";
 import GlassCard from "@/components/GlassCard";
 import CyberButton from "@/components/CyberButton";
+import Footer from "@/components/Footer";
 
 const Index = () => {
   const features = [
@@ -194,6 +195,8 @@ const Index = () => {
           </GlassCard>
         </div>
       </section>
+
+      <Footer />
     </div>
   );
 };
