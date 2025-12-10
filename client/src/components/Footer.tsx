@@ -31,9 +31,20 @@ const Footer: React.FC = () => {
             CYBER HUB
           </h2>
           
-          <p className="mt-6 text-muted-foreground text-sm">
-            © {new Date().getFullYear()} SCPSC Cyber Hub. All rights reserved.
-          </p>
+          <div className="mt-6 text-muted-foreground text-sm space-y-1">
+            <p>© 2026 SCPSC Cyber Hub. All rights reserved.</p>
+            <p>
+              Made by{" "}
+              <a 
+                href="https://tahsin.cloud" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-primary hover:text-primary/80 transition-colors underline decoration-primary/50 hover:decoration-primary"
+              >
+                Saad Bin Tofayel (Tahsin)
+              </a>
+            </p>
+          </div>
         </div>
       </div>
     </footer>
