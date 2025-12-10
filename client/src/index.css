@@ -106,7 +106,7 @@
     scrollbar-color: #0066ff #000000;
   }
 
-  /* Terminal specific scrollbar */
+  /* Terminal specific scrollbar - Green */
   .terminal-scrollbar::-webkit-scrollbar {
     width: 6px !important;
     height: 6px !important;
@@ -117,17 +117,17 @@
   }
 
   .terminal-scrollbar::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, #00f0ff 0%, #0066ff 50%, #000033 100%) !important;
+    background: linear-gradient(180deg, #00ff88 0%, #00cc66 50%, #003322 100%) !important;
     border-radius: 3px !important;
   }
 
   .terminal-scrollbar::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(180deg, #00f0ff 0%, #0088ff 50%, #000066 100%) !important;
+    background: linear-gradient(180deg, #00ff88 0%, #00ff66 50%, #004422 100%) !important;
   }
 
   .terminal-scrollbar {
     scrollbar-width: thin !important;
-    scrollbar-color: #0066ff #000000 !important;
+    scrollbar-color: #00cc66 #000000 !important;
   }
 }
 
