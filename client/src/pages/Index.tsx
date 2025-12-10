@@ -124,17 +124,17 @@ const Index = () => {
                 key={feature.title}
                 hover3D
                 glowColor={index % 2 === 0 ? "cyan" : "violet"}
-                className="animate-fade-in"
+                className="animate-fade-in h-full flex flex-col"
               >
                 <feature.icon
                   className={`w-12 h-12 mb-4 ${
                     index % 2 === 0 ? "text-primary" : "text-secondary"
                   }`}
                 />
-                <h3 className="font-display text-xl font-bold text-foreground mb-2">
+                <h3 className="font-display text-lg font-bold text-foreground mb-2">
                   {feature.title}
                 </h3>
-                <p className="text-muted-foreground font-body text-sm">
+                <p className="text-muted-foreground font-body text-sm flex-grow">
                   {feature.description}
                 </p>
               </GlassCard>
