@@ -31,7 +31,7 @@ const About = () => {
     <>
       <SEO 
         title="About SCPSC Cyber Hub - Our Mission, Vision & Values"
-        description="Discover SCPSC Cyber Hub's journey from 2022 to 200+ members. Learn about our mission to democratize tech education through innovation, excellence, and collaboration."
+        description="Discover SCPSC Cyber Hub's journey from August 2024 to 200 members. Learn about our mission to democratize tech education through innovation, excellence, and collaboration."
         keywords="about SCPSC Cyber Hub, tech club mission, innovation excellence, technology education Bangladesh, student tech community, coding club history"
       />
       <div className="min-h-screen pt-24 pb-20">
@@ -150,9 +150,9 @@ const About = () => {
             <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-secondary to-primary md:-translate-x-1/2" />
 
             {[
-              { year: "2022", title: "Genesis", desc: "SCPSC Cyber Hub was founded by passionate tech enthusiasts at SCPSC." },
-              { year: "2023", title: "Growing Strong", desc: "Expanded our core modules and reached 100+ active members." },
-              { year: "2024", title: "200+ Members", desc: "Celebrated 200+ members, 50+ workshops, and 15+ successful events." },
+              { year: "Aug 2024", title: "Genesis", desc: "SCPSC Cyber Hub was founded by passionate tech enthusiasts at SCPSC." },
+              { year: "Dec 2024", title: "200 Members", desc: "Reached 200 members and growing — a thriving community of innovators." },
+              { year: "2025", title: "The Future", desc: "Expanding our impact with more workshops, projects, and opportunities." },
             ].map((item, index) => (
               <div
                 key={item.year}
