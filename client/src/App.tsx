@@ -12,6 +12,7 @@ import Ideas from "./pages/Ideas";
 import Executive from "./pages/Executive";
 import Projects from "./pages/Projects";
 import Join from "./pages/Join";
+import Admin from "./pages/Admin";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -32,6 +33,7 @@ const App = () => (
           <Route path="/executive" element={<Executive />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/join" element={<Join />} />
+          <Route path="/admin" element={<Admin />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
