@@ -10,7 +10,6 @@ interface Particle {
 
 const QuantumField = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const mouseRef = useRef({ x: -1000, y: -1000 });
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -21,9 +20,8 @@ const QuantumField = () => {
 
     let animationId: number;
     let particles: Particle[] = [];
-    const particleCount = 60;
-    const connectionDistance = 130;
-    const mouseRadius = 150;
+    const particleCount = 80;
+    const connectionDistance = 150;
 
     const resize = () => {
       canvas.width = window.innerWidth;
@@ -36,93 +34,89 @@ const QuantumField = () => {
         particles.push({
           x: Math.random() * canvas.width,
           y: Math.random() * canvas.height,
-          vx: (Math.random() - 0.5) * 0.4,
-          vy: (Math.random() - 0.5) * 0.4,
-          radius: Math.random() * 1.5 + 1,
+          vx: (Math.random() - 0.5) * 0.5,
+          vy: (Math.random() - 0.5) * 0.5,
+          radius: Math.random() * 2 + 1,
         });
       }
     };
 
     const drawGrid = () => {
-      const gridSize = 70;
-      ctx.strokeStyle = "rgba(58, 156, 168, 0.025)";
+      const gridSize = 60;
+      const time = Date.now() * 0.0002;
+
+      ctx.strokeStyle = "rgba(0, 240, 255, 0.03)";
       ctx.lineWidth = 1;
 
+      // Horizontal lines with wave effect
       for (let y = 0; y < canvas.height; y += gridSize) {
         ctx.beginPath();
-        ctx.moveTo(0, y);
-        ctx.lineTo(canvas.width, y);
+        for (let x = 0; x < canvas.width; x += 5) {
+          const wave = Math.sin(x * 0.01 + time) * 3;
+          if (x === 0) {
+            ctx.moveTo(x, y + wave);
+          } else {
+            ctx.lineTo(x, y + wave);
+          }
+        }
         ctx.stroke();
       }
 
+      // Vertical lines with wave effect
       for (let x = 0; x < canvas.width; x += gridSize) {
         ctx.beginPath();
-        ctx.moveTo(x, 0);
-        ctx.lineTo(x, canvas.height);
+        for (let y = 0; y < canvas.height; y += 5) {
+          const wave = Math.sin(y * 0.01 + time) * 3;
+          if (y === 0) {
+            ctx.moveTo(x + wave, y);
+          } else {
+            ctx.lineTo(x + wave, y);
+          }
+        }
         ctx.stroke();
       }
     };
 
     const animate = () => {
-      ctx.fillStyle = "#0a0a14";
+      ctx.fillStyle = "rgba(4, 4, 15, 0.1)";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       drawGrid();
 
-      const mouse = mouseRef.current;
-
+      // Update and draw particles
       particles.forEach((particle, i) => {
         particle.x += particle.vx;
         particle.y += particle.vy;
 
+        // Boundary check
         if (particle.x < 0 || particle.x > canvas.width) particle.vx *= -1;
         if (particle.y < 0 || particle.y > canvas.height) particle.vy *= -1;
 
+        // Draw particle
         ctx.beginPath();
         ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(58, 156, 168, 0.5)";
+        ctx.fillStyle = "rgba(0, 240, 255, 0.6)";
         ctx.fill();
 
-        const dxMouse = mouse.x - particle.x;
-        const dyMouse = mouse.y - particle.y;
-        const distMouse = Math.sqrt(dxMouse * dxMouse + dyMouse * dyMouse);
-
-        if (distMouse < mouseRadius) {
-          const opacity = (1 - distMouse / mouseRadius) * 0.5;
-          ctx.beginPath();
-          ctx.moveTo(particle.x, particle.y);
-          ctx.lineTo(mouse.x, mouse.y);
-          ctx.strokeStyle = `rgba(106, 90, 168, ${opacity})`;
-          ctx.lineWidth = 1;
-          ctx.stroke();
-        }
-
+        // Draw connections
         for (let j = i + 1; j < particles.length; j++) {
           const dx = particles[j].x - particle.x;
           const dy = particles[j].y - particle.y;
           const distance = Math.sqrt(dx * dx + dy * dy);
 
           if (distance < connectionDistance) {
-            const opacity = (1 - distance / connectionDistance) * 0.2;
+            const opacity = (1 - distance / connectionDistance) * 0.3;
             ctx.beginPath();
             ctx.moveTo(particle.x, particle.y);
             ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.strokeStyle = `rgba(58, 156, 168, ${opacity})`;
-            ctx.lineWidth = 0.5;
+            ctx.strokeStyle = `rgba(0, 240, 255, ${opacity})`;
+            ctx.lineWidth = 1;
             ctx.stroke();
           }
         }
       });
 
       animationId = requestAnimationFrame(animate);
-    };
-
-    const handleMouseMove = (e: MouseEvent) => {
-      mouseRef.current = { x: e.clientX, y: e.clientY };
-    };
-
-    const handleMouseLeave = () => {
-      mouseRef.current = { x: -1000, y: -1000 };
     };
 
     resize();
@@ -133,14 +127,10 @@ const QuantumField = () => {
       resize();
       createParticles();
     });
-    window.addEventListener("mousemove", handleMouseMove);
-    window.addEventListener("mouseleave", handleMouseLeave);
 
     return () => {
       cancelAnimationFrame(animationId);
       window.removeEventListener("resize", resize);
-      window.removeEventListener("mousemove", handleMouseMove);
-      window.removeEventListener("mouseleave", handleMouseLeave);
     };
   }, []);
 
@@ -148,7 +138,7 @@ const QuantumField = () => {
     <canvas
       ref={canvasRef}
       className="fixed inset-0 -z-10 pointer-events-none"
-      style={{ background: "#0a0a14" }}
+      style={{ background: "#04040F" }}
     />
   );
 };
