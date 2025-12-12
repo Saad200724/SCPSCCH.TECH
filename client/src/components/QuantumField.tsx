@@ -10,6 +10,7 @@ interface Particle {
 
 const QuantumField = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const mouseRef = useRef({ x: -1000, y: -1000 });
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -20,8 +21,9 @@ const QuantumField = () => {
 
     let animationId: number;
     let particles: Particle[] = [];
-    const particleCount = 50;
-    const connectionDistance = 120;
+    const particleCount = 60;
+    const connectionDistance = 130;
+    const mouseRadius = 150;
 
     const resize = () => {
       canvas.width = window.innerWidth;
@@ -34,15 +36,15 @@ const QuantumField = () => {
         particles.push({
           x: Math.random() * canvas.width,
           y: Math.random() * canvas.height,
-          vx: (Math.random() - 0.5) * 0.3,
-          vy: (Math.random() - 0.5) * 0.3,
-          radius: Math.random() * 1.5 + 0.5,
+          vx: (Math.random() - 0.5) * 0.4,
+          vy: (Math.random() - 0.5) * 0.4,
+          radius: Math.random() * 1.5 + 1,
         });
       }
     };
 
     const drawGrid = () => {
-      const gridSize = 80;
+      const gridSize = 70;
       ctx.strokeStyle = "rgba(58, 156, 168, 0.025)";
       ctx.lineWidth = 1;
 
@@ -67,6 +69,8 @@ const QuantumField = () => {
 
       drawGrid();
 
+      const mouse = mouseRef.current;
+
       particles.forEach((particle, i) => {
         particle.x += particle.vx;
         particle.y += particle.vy;
@@ -76,8 +80,22 @@ const QuantumField = () => {
 
         ctx.beginPath();
         ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(58, 156, 168, 0.4)";
+        ctx.fillStyle = "rgba(58, 156, 168, 0.5)";
         ctx.fill();
+
+        const dxMouse = mouse.x - particle.x;
+        const dyMouse = mouse.y - particle.y;
+        const distMouse = Math.sqrt(dxMouse * dxMouse + dyMouse * dyMouse);
+
+        if (distMouse < mouseRadius) {
+          const opacity = (1 - distMouse / mouseRadius) * 0.5;
+          ctx.beginPath();
+          ctx.moveTo(particle.x, particle.y);
+          ctx.lineTo(mouse.x, mouse.y);
+          ctx.strokeStyle = `rgba(106, 90, 168, ${opacity})`;
+          ctx.lineWidth = 1;
+          ctx.stroke();
+        }
 
         for (let j = i + 1; j < particles.length; j++) {
           const dx = particles[j].x - particle.x;
@@ -85,7 +103,7 @@ const QuantumField = () => {
           const distance = Math.sqrt(dx * dx + dy * dy);
 
           if (distance < connectionDistance) {
-            const opacity = (1 - distance / connectionDistance) * 0.15;
+            const opacity = (1 - distance / connectionDistance) * 0.2;
             ctx.beginPath();
             ctx.moveTo(particle.x, particle.y);
             ctx.lineTo(particles[j].x, particles[j].y);
@@ -99,6 +117,14 @@ const QuantumField = () => {
       animationId = requestAnimationFrame(animate);
     };
 
+    const handleMouseMove = (e: MouseEvent) => {
+      mouseRef.current = { x: e.clientX, y: e.clientY };
+    };
+
+    const handleMouseLeave = () => {
+      mouseRef.current = { x: -1000, y: -1000 };
+    };
+
     resize();
     createParticles();
     animate();
@@ -107,10 +133,14 @@ const QuantumField = () => {
       resize();
       createParticles();
     });
+    window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("mouseleave", handleMouseLeave);
 
     return () => {
       cancelAnimationFrame(animationId);
       window.removeEventListener("resize", resize);
+      window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("mouseleave", handleMouseLeave);
     };
   }, []);
 
