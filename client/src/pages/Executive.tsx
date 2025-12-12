@@ -346,26 +346,6 @@ const Executive = () => {
   const president = executives.find((e) => e.isPresident);
   const otherMembers = executives.filter((e) => !e.isPresident);
 
-  const representatives = [
-    {
-      name: "Saad Hossain",
-      role: "CyberHub Representative",
-      classLevel: "Class: 8",
-      image: "/representatives/image_1765546902358.png",
-    },
-    {
-      name: "Zahin Islam",
-      role: "CyberHub Representative",
-      classLevel: "Class: 7",
-      image: "/representatives/image_1765546906858.png",
-    },
-    {
-      name: "Md Maheeb Hossain",
-      role: "CyberHub Representative",
-      classLevel: "Class: 6",
-      image: "/representatives/image_1765546911790.png",
-    },
-  ];
 
   return (
     <div className="min-h-screen pt-24 pb-20">
@@ -538,34 +518,6 @@ const Executive = () => {
           ))}
         </div>
 
-        {/* Representatives Section - Only show for 2025-26 */}
-        {activeYear === "2025-26" && (
-          <div className="mt-20">
-            <SectionTitle
-              title="CYBERHUB REPRESENTATIVES"
-              subtitle="Our class representatives spreading the tech spirit"
-            />
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-              {representatives.map((rep, index) => (
-                <GlassCard
-                  key={rep.name}
-                  hover3D
-                  glowColor={index % 2 === 0 ? "cyan" : "violet"}
-                  className="p-0 overflow-hidden"
-                >
-                  <div className="aspect-square w-full overflow-hidden">
-                    <img
-                      src={rep.image}
-                      alt={rep.name}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                </GlassCard>
-              ))}
-            </div>
-          </div>
-        )}
       </div>
 
       {/* Member Detail Popup */}
