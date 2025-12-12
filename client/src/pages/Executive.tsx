@@ -351,19 +351,19 @@ const Executive = () => {
       name: "Saad Hossain",
       role: "CyberHub Representative",
       classLevel: "Class: 8",
-      image: "/representatives/image_1765533350362.png",
+      image: "/representatives/image_1765546902358.png",
     },
     {
       name: "Zahin Islam",
       role: "CyberHub Representative",
       classLevel: "Class: 7",
-      image: "/representatives/image_1765533358767.png",
+      image: "/representatives/image_1765546906858.png",
     },
     {
       name: "Md Maheeb Hossain",
       role: "CyberHub Representative",
       classLevel: "Class: 6",
-      image: "/representatives/image_1765533366274.png",
+      image: "/representatives/image_1765546911790.png",
     },
   ];
 
