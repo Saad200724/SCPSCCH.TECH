@@ -92,6 +92,20 @@ const Executive = () => {
       },
     },
     {
+      name: "Sattik Sarker",
+      role: "Asst. Office Secretary",
+      title: "Executive Committee 2025-26",
+      bio: "Assisting with administrative tasks and communications.",
+      image: "/executives/asst-office-secretary.png",
+      isPresident: false,
+      socials: {
+        github: "#",
+        linkedin: "#",
+        twitter: "#",
+        email: "cyberhub@scpsc.edu",
+      },
+    },
+    {
       name: "Ahnaf Hassan Orko",
       role: "Publicity Secretary",
       title: "Executive Committee 2025-26",
