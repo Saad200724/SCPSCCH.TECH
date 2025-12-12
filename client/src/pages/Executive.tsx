@@ -548,20 +548,20 @@ const Executive = () => {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
               {representatives.map((rep, index) => (
-                <div
+                <GlassCard
                   key={rep.name}
-                  className={`rounded-xl overflow-hidden border-2 ${
-                    index % 2 === 0
-                      ? "border-primary/30 hover:shadow-glow-cyan"
-                      : "border-secondary/30 hover:shadow-glow-violet"
-                  } transition-all duration-300 hover:scale-[1.02]`}
+                  hover3D
+                  glowColor={index % 2 === 0 ? "cyan" : "violet"}
+                  className="p-0 overflow-hidden"
                 >
-                  <img
-                    src={rep.image}
-                    alt={rep.name}
-                    className="w-full h-auto object-contain"
-                  />
-                </div>
+                  <div className="aspect-square w-full overflow-hidden">
+                    <img
+                      src={rep.image}
+                      alt={rep.name}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </GlassCard>
               ))}
             </div>
           </div>
