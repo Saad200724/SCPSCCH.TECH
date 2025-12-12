@@ -346,6 +346,27 @@ const Executive = () => {
   const president = executives.find((e) => e.isPresident);
   const otherMembers = executives.filter((e) => !e.isPresident);
 
+  const representatives = [
+    {
+      name: "Saad Hossain",
+      role: "CyberHub Representative",
+      classLevel: "Class: 8",
+      image: "/representatives/image_1765533350362.png",
+    },
+    {
+      name: "Zahin Islam",
+      role: "CyberHub Representative",
+      classLevel: "Class: 7",
+      image: "/representatives/image_1765533358767.png",
+    },
+    {
+      name: "Md Maheeb Hossain",
+      role: "CyberHub Representative",
+      classLevel: "Class: 6",
+      image: "/representatives/image_1765533366274.png",
+    },
+  ];
+
   return (
     <div className="min-h-screen pt-24 pb-20">
       <div className="container mx-auto px-6">
@@ -516,6 +537,58 @@ const Executive = () => {
             </div>
           ))}
         </div>
+
+        {/* Representatives Section - Only show for 2025-26 */}
+        {activeYear === "2025-26" && (
+          <div className="mt-20">
+            <SectionTitle
+              title="CYBERHUB REPRESENTATIVES"
+              subtitle="Our class representatives spreading the tech spirit"
+            />
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
+              {representatives.map((rep, index) => (
+                <GlassCard
+                  key={rep.name}
+                  hover3D
+                  glowColor={index % 2 === 0 ? "cyan" : "violet"}
+                >
+                  <div className="text-center">
+                    <div className="relative inline-block mb-4">
+                      <div
+                        className={`w-28 h-28 rounded-full overflow-hidden border-2 ${
+                          index % 2 === 0
+                            ? "border-primary/50 shadow-glow-cyan"
+                            : "border-secondary/50 shadow-glow-violet"
+                        } transition-all duration-300`}
+                      >
+                        <img
+                          src={rep.image}
+                          alt={rep.name}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                    </div>
+
+                    <h3 className="font-display text-xl font-bold text-foreground mb-1">
+                      {rep.name}
+                    </h3>
+                    <p
+                      className={`font-display text-sm mb-1 ${
+                        index % 2 === 0 ? "text-primary" : "text-secondary"
+                      }`}
+                    >
+                      {rep.role}
+                    </p>
+                    <p className="text-muted-foreground font-body text-xs">
+                      {rep.classLevel}
+                    </p>
+                  </div>
+                </GlassCard>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
 
       {/* Member Detail Popup */}
