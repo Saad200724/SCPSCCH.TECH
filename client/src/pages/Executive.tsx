@@ -5,11 +5,11 @@ import SectionTitle from "@/components/SectionTitle";
 const Executive = () => {
   const executives = [
     {
-      name: "Club President",
+      name: "Saad Bin Tofayel",
       role: "President",
-      title: "Founder",
-      bio: "Visionary leader driving SCPSC Cyber Hub's mission to build the future through technology and innovation.",
-      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=president&backgroundColor=0f0f23",
+      title: "Executive Committee 2025-26",
+      bio: "Leading SCPSC Cyber Hub with vision and dedication to build the future through technology and innovation.",
+      image: "/executives/president.png",
       isPresident: true,
       socials: {
         github: "#",
@@ -19,11 +19,25 @@ const Executive = () => {
       },
     },
     {
-      name: "Vice President",
+      name: "Maisa Tabassum",
+      role: "General Secretary",
+      title: "Executive Committee 2025-26",
+      bio: "Managing club operations and ensuring smooth coordination across all activities.",
+      image: "/executives/general-secretary.png",
+      isPresident: false,
+      socials: {
+        github: "#",
+        linkedin: "#",
+        twitter: "#",
+        email: "cyberhub@scpsc.edu",
+      },
+    },
+    {
+      name: "Safwan Baari",
       role: "Vice President",
-      title: "Operations Lead",
-      bio: "Managing club operations and coordinating across all five core modules.",
-      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=vicepresident&backgroundColor=0f0f23",
+      title: "Executive Committee 2025-26",
+      bio: "Supporting club leadership and coordinating across all core modules.",
+      image: "/executives/vice-president.png",
       isPresident: false,
       socials: {
         github: "#",
@@ -33,11 +47,11 @@ const Executive = () => {
       },
     },
     {
-      name: "CP Lead",
-      role: "Competitive Programming Head",
-      title: "Problem Solver",
-      bio: "Leading our competitive programming team and organizing coding contests.",
-      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=cplead&backgroundColor=0f0f23",
+      name: "Aayan Bin Alamgir",
+      role: "Organizing Secretary",
+      title: "Executive Committee 2025-26",
+      bio: "Planning and organizing events and activities for the club.",
+      image: "/executives/organizing-secretary.png",
       isPresident: false,
       socials: {
         github: "#",
@@ -47,11 +61,11 @@ const Executive = () => {
       },
     },
     {
-      name: "Web Dev Lead",
-      role: "Web Development Head",
-      title: "Full-Stack Dev",
-      bio: "Building amazing web experiences and mentoring upcoming developers.",
-      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=webdevlead&backgroundColor=0f0f23",
+      name: "Tanvir Alam Rifat",
+      role: "Program Secretary",
+      title: "Executive Committee 2025-26",
+      bio: "Managing programs and workshops for skill development.",
+      image: "/executives/program-secretary.png",
       isPresident: false,
       socials: {
         github: "#",
@@ -61,11 +75,11 @@ const Executive = () => {
       },
     },
     {
-      name: "AI/ML Lead",
-      role: "AI/ML Head",
-      title: "ML Engineer",
-      bio: "Exploring the frontiers of artificial intelligence and machine learning.",
-      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=aimllead&backgroundColor=0f0f23",
+      name: "Tahsina Azad Ariba",
+      role: "Office Secretary",
+      title: "Executive Committee 2025-26",
+      bio: "Handling administrative tasks and official communications.",
+      image: "/executives/office-secretary.png",
       isPresident: false,
       socials: {
         github: "#",
@@ -75,11 +89,39 @@ const Executive = () => {
       },
     },
     {
-      name: "Creative Lead",
-      role: "Video & Graphics Head",
-      title: "Creative Director",
-      bio: "Leading the creative team for video editing and graphics designing excellence.",
-      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=creativelead&backgroundColor=0f0f23",
+      name: "Ahnaf Hassan Orko",
+      role: "Publicity Secretary",
+      title: "Executive Committee 2025-26",
+      bio: "Managing publicity and outreach for club activities.",
+      image: "/executives/publicity-secretary.png",
+      isPresident: false,
+      socials: {
+        github: "#",
+        linkedin: "#",
+        twitter: "#",
+        email: "cyberhub@scpsc.edu",
+      },
+    },
+    {
+      name: "Shadiq Al Murtoza",
+      role: "Treasurer",
+      title: "Executive Committee 2025-26",
+      bio: "Managing club finances and budget allocations.",
+      image: "/executives/treasurer.png",
+      isPresident: false,
+      socials: {
+        github: "#",
+        linkedin: "#",
+        twitter: "#",
+        email: "cyberhub@scpsc.edu",
+      },
+    },
+    {
+      name: "Nasira Husna Srizany",
+      role: "Executive",
+      title: "Executive Committee 2025-26",
+      bio: "Supporting club activities and initiatives.",
+      image: "/executives/executive.png",
       isPresident: false,
       socials: {
         github: "#",
@@ -97,7 +139,7 @@ const Executive = () => {
     <div className="min-h-screen pt-24 pb-20">
       <div className="container mx-auto px-6">
         <SectionTitle
-          title="THE COUNCIL"
+          title="EXECUTIVE COMMITTEE 2025-26"
           subtitle="Meet the team behind SCPSC Cyber Hub"
         />
 
@@ -123,7 +165,7 @@ const Executive = () => {
                     />
                   </div>
                   <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 px-3 md:px-4 py-1 rounded-full bg-secondary text-secondary-foreground font-display text-[10px] md:text-xs uppercase tracking-wider whitespace-nowrap">
-                    {president.title}
+                    {president.role}
                   </div>
                 </div>
 
@@ -140,13 +182,13 @@ const Executive = () => {
 
                   <div className="flex justify-center md:justify-start gap-4">
                     {[
-                      { icon: Github, href: president.socials.github },
-                      { icon: Linkedin, href: president.socials.linkedin },
-                      { icon: Twitter, href: president.socials.twitter },
-                      { icon: Mail, href: `mailto:${president.socials.email}` },
-                    ].map(({ icon: Icon, href }) => (
+                      { icon: Github, href: president.socials.github, name: "github" },
+                      { icon: Linkedin, href: president.socials.linkedin, name: "linkedin" },
+                      { icon: Twitter, href: president.socials.twitter, name: "twitter" },
+                      { icon: Mail, href: `mailto:${president.socials.email}`, name: "email" },
+                    ].map(({ icon: Icon, href, name }) => (
                       <a
-                        key={href}
+                        key={name}
                         href={href}
                         className="p-2 rounded-lg bg-secondary/10 text-secondary hover:bg-secondary/20 hover:shadow-glow-violet transition-all duration-300"
                       >
@@ -161,7 +203,7 @@ const Executive = () => {
         )}
 
         {/* Other Team Members */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
           {otherMembers.map((member, index) => (
             <GlassCard
               key={member.name}
@@ -207,12 +249,12 @@ const Executive = () => {
                 {/* Socials */}
                 <div className="flex justify-center gap-3">
                   {[
-                    { icon: Github, href: member.socials.github },
-                    { icon: Linkedin, href: member.socials.linkedin },
-                    { icon: Mail, href: `mailto:${member.socials.email}` },
-                  ].map(({ icon: Icon, href }) => (
+                    { icon: Github, href: member.socials.github, name: "github" },
+                    { icon: Linkedin, href: member.socials.linkedin, name: "linkedin" },
+                    { icon: Mail, href: `mailto:${member.socials.email}`, name: "email" },
+                  ].map(({ icon: Icon, href, name }) => (
                     <a
-                      key={href}
+                      key={name}
                       href={href}
                       className={`p-2 rounded-lg transition-all duration-300 ${
                         index % 2 === 0
