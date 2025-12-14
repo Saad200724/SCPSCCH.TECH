@@ -10,6 +10,7 @@ const Portfoliathon = () => {
         title="PORTFOLIATHON INTRA 1.0 - 72 Hours Hackathon | SCPSC Cyber Hub"
         description="Join PORTFOLIATHON INTRA 1.0, a 72-hour hackathon from Dec 21-24, 2025. Build your portfolio, innovate, and compete for exciting prizes on Devpost."
         keywords="PORTFOLIATHON, hackathon, portfolio competition, Devpost, coding competition, 72 hours hackathon, SCPSC"
+        image="https://scpscch.tech/portfoliathon-og.jpg"
       />
       <div className="min-h-screen pt-24 pb-20">
         <div className="container mx-auto px-6">
