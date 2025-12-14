@@ -36,8 +36,8 @@ const Events = () => {
     <>
       <SEO 
         title="SCPSC Cyber Hub Events - Hackathons, Workshops & Tech Talks"
-        description="Explore SCPSC CODE JAM 2025, React workshops, AI/ML bootcamps, and graphics design masterclasses. Join 50+ workshops and tech events. Free registration for students."
-        keywords="SCPSC events, CODE JAM hackathon, web development workshop, AI ML bootcamp, graphics design masterclass, tech talks Bangladesh, coding competition, free tech events"
+        description="Explore PORTFOLIATHON INTRA 1.0, React workshops, AI/ML bootcamps, and graphics design masterclasses. Join 50+ workshops and tech events. Free registration for students."
+        keywords="SCPSC events, PORTFOLIATHON hackathon, web development workshop, AI ML bootcamp, graphics design masterclass, tech talks Bangladesh, coding competition, free tech events"
       />
       <div className="min-h-screen pt-24 pb-20">
       <div className="container mx-auto px-6">
@@ -104,6 +104,13 @@ const Events = () => {
                     Register Now
                     <ArrowRight className="inline-block ml-2 w-5 h-5" />
                   </CyberButton>
+                </div>
+                <div className="lg:w-80 flex-shrink-0">
+                  <img 
+                    src="/portfoliathon.jpg" 
+                    alt="PORTFOLIATHON INTRA 1.0" 
+                    className="w-full h-auto rounded-xl border border-primary/30 shadow-lg shadow-primary/20"
+                  />
                 </div>
               </div>
             </GlassCard>
