@@ -1,6 +1,4 @@
-import { Link } from "react-router-dom";
 import { Calendar, MapPin, Clock, Users, Trophy, Target, Zap, Code2, Sparkles } from "lucide-react";
-import FormfacadeEmbed from "@formfacade/embed-react";
 import GlassCard from "@/components/GlassCard";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
@@ -81,25 +79,27 @@ const Portfoliathon = () => {
             </div>
 
             <div className="lg:w-1/2">
-              <GlassCard className="p-8 border-primary/40">
-                <div className="text-center mb-6">
-                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/20 mb-4">
-                    <Code2 className="w-8 h-8 text-primary" />
-                  </div>
-                  <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-2">
-                    Register Now
-                  </h2>
-                  <p className="text-muted-foreground font-body text-sm">
-                    Secure your spot in PORTFOLIATHON INTRA 1.0
-                  </p>
+              <div className="text-center mb-6">
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/20 mb-4">
+                  <Code2 className="w-8 h-8 text-primary" />
                 </div>
-                <div className="registration-form">
-                  <FormfacadeEmbed
-                    formFacadeURL="https://formfacade.com/include/108491804984156366057/form/1FAIpQLSdoE8X_E2Fsmxw9q9IwUZnk2eJo0_KTXZ535QEzixbvO-seJQ/classic.js/?div=ff-compose"
-                    onSubmitForm={() => console.log('Form submitted')}
-                  />
-                </div>
-              </GlassCard>
+                <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-2">
+                  Register Now
+                </h2>
+                <p className="text-muted-foreground font-body text-sm">
+                  Secure your spot in PORTFOLIATHON INTRA 1.0
+                </p>
+              </div>
+              <div className="w-full overflow-hidden rounded-lg">
+                <iframe 
+                  src="https://docs.google.com/forms/d/e/1FAIpQLSdoE8X_E2Fsmxw9q9IwUZnk2eJo0_KTXZ535QEzixbvO-seJQ/viewform?embedded=true" 
+                  className="w-full min-h-[600px] sm:min-h-[800px] md:min-h-[1000px] lg:min-h-[1200px]"
+                  style={{ border: 'none', background: 'white' }}
+                  title="Portfoliathon Registration Form"
+                >
+                  Loading…
+                </iframe>
+              </div>
             </div>
           </div>
 
