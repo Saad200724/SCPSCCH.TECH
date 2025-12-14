@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "tsx server/index.ts",
+    "dev": "node_modules/.bin/tsx server/index.ts",
     "build": "vite build && esbuild server/index.ts --bundle --platform=node --outfile=dist/index.js --packages=external --format=esm",
     "start": "NODE_ENV=production node dist/index.js",
     "lint": "eslint .",
