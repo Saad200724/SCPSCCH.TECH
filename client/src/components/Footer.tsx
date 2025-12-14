@@ -19,7 +19,7 @@ const Footer: React.FC = () => {
             </span>
             <div className="flex items-center justify-center">
               <img 
-                src="/attached_assets/CH-LOGO-mark_1765371782036.png" 
+                src="/cyber-hub-logo.png" 
                 alt="Cyber Hub Logo" 
                 className="h-32 md:h-40 lg:h-48 w-auto object-contain"
                 onError={(e) => console.error('Cyber Hub logo failed to load:', e)}
