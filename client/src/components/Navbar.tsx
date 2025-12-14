@@ -21,12 +21,15 @@ const Navbar = () => {
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex items-center group">
+          <Link to="/" className="flex items-center gap-2 md:gap-3 group">
             <img 
-              src="/cyber-hub-logo.png" 
+              src="/logo.png" 
               alt="SCPSC Cyber Hub" 
-              className="h-10 md:h-12 w-auto object-contain"
+              className="h-8 md:h-10 w-auto object-contain"
             />
+            <span className="font-display text-sm md:text-lg font-bold text-foreground group-hover:text-primary transition-colors">
+              SCPSC Cyber Hub
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
