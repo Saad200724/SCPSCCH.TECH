@@ -51,7 +51,6 @@ const Verification = () => {
         <SectionTitle 
           title="Certificate Verification" 
           subtitle="Ensuring the authenticity of professional credentials"
-          align="center"
         />
 
         <div className="mt-12">
