@@ -258,6 +258,9 @@ const Verification = () => {
                       src={`/certificates/${id}.png`} 
                       alt={`Certificate for ${data.name}`}
                       className="w-full h-full object-contain shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]"
+                      loading="eager"
+                      fetchPriority="high"
+                      decoding="async"
                       onError={(e) => {
                         (e.target as HTMLImageElement).src = '/certificates/placeholder.png';
                       }}
