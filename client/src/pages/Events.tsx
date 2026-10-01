@@ -4,6 +4,7 @@ import GlassCard from "@/components/GlassCard";
 import SectionTitle from "@/components/SectionTitle";
 import CyberButton from "@/components/CyberButton";
 import SEO from "@/components/SEO";
+import Footer from "@/components/Footer";
 import INITIAL_EVENTS from "@/data/events";
 
 interface Event {
@@ -230,6 +231,7 @@ const Events = () => {
           </GlassCard>
         </div>
       </div>
+      <Footer />
     </div>
     </>
   );

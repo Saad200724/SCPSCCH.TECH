@@ -3,6 +3,8 @@ import { Shield, Code2, Cpu, Sparkles, Loader2 } from "lucide-react";
 import GlassCard from "@/components/GlassCard";
 import SectionTitle from "@/components/SectionTitle";
 import CyberButton from "@/components/CyberButton";
+import SEO from "@/components/SEO";
+import Footer from "@/components/Footer";
 
 type Category = "CP" | "WEB-DEV" | "AI-ML";
 
@@ -259,13 +261,19 @@ const Ideas = () => {
   };
 
   return (
-    <div className="min-h-screen pt-24 pb-20">
-      <div className="container mx-auto px-6">
-        <SectionTitle
-          title="NEXUS AI"
-          subtitle="Let our quantum neural network generate breakthrough project ideas"
-          glowColor="violet"
-        />
+    <>
+      <SEO 
+        title="Nexus AI Project Idea Generator - SCPSC Cyber Hub"
+        description="Generate breakthrough project ideas across Competitive Programming, Web Development, and AI/ML with Nexus AI."
+        keywords="project ideas generator, AI project ideas, competitive programming ideas, web development projects, hackathon ideas"
+      />
+      <div className="min-h-screen pt-24 pb-20">
+        <div className="container mx-auto px-6">
+          <SectionTitle
+            title="NEXUS AI"
+            subtitle="Let our quantum neural network generate breakthrough project ideas"
+            glowColor="violet"
+          />
 
         <div className="max-w-5xl mx-auto mb-8 md:mb-12">
           <h3 className="font-display text-lg md:text-xl text-foreground mb-4 md:mb-6 text-center">
@@ -408,7 +416,9 @@ const Ideas = () => {
           </GlassCard>
         </div>
       </div>
+      <Footer />
     </div>
+    </>
   );
 };
 

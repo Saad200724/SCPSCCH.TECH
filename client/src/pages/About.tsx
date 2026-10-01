@@ -2,6 +2,7 @@ import { Cpu, Target, Eye, Lightbulb } from "lucide-react";
 import GlassCard from "@/components/GlassCard";
 import SectionTitle from "@/components/SectionTitle";
 import SEO from "@/components/SEO";
+import Footer from "@/components/Footer";
 
 const About = () => {
   const values = [
@@ -183,6 +184,7 @@ const About = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
     </>
   );

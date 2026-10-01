@@ -4,6 +4,7 @@ import { Search, Award, ExternalLink, ShieldCheck, ArrowRight } from 'lucide-rea
 import GlassCard from '@/components/GlassCard';
 import SectionTitle from '@/components/SectionTitle';
 import SEO from '@/components/SEO';
+import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
@@ -118,6 +119,7 @@ const CertificateSearch = () => {
           </GlassCard>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

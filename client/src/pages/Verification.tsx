@@ -4,6 +4,8 @@ import { CheckCircle, XCircle, ShieldCheck, Loader2, Download, Share2, Award, Ca
 import GlassCard from '@/components/GlassCard';
 import SectionTitle from '@/components/SectionTitle';
 import SEO from '@/components/SEO';
+import Footer from '@/components/Footer';
+import { useToast } from '@/hooks/use-toast';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 import { Badge } from '@/components/ui/badge';
@@ -122,6 +124,7 @@ const Verification = () => {
   const { id } = useParams<{ id: string }>();
   const [data, setData] = useState<CertificateData | null>(null);
   const [loading, setLoading] = useState(true);
+  const { toast } = useToast();
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -242,7 +245,10 @@ const Verification = () => {
                   onClick={() => {
                     const shareUrl = `${window.location.origin}/verify/${id}`;
                     navigator.clipboard.writeText(shareUrl);
-                    alert("Verification link copied to clipboard!");
+                    toast({
+                      title: "Link Copied!",
+                      description: "Verification link has been copied to your clipboard.",
+                    });
                   }}
                 >
                   <Share2 className="h-4 w-4" />
@@ -332,6 +338,7 @@ const Verification = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

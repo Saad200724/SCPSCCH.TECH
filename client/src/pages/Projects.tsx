@@ -3,6 +3,7 @@ import GlassCard from "@/components/GlassCard";
 import SectionTitle from "@/components/SectionTitle";
 import CyberButton from "@/components/CyberButton";
 import SEO from "@/components/SEO";
+import Footer from "@/components/Footer";
 
 const Projects = () => {
   return (
@@ -40,6 +41,7 @@ const Projects = () => {
             </GlassCard>
           </div>
         </div>
+        <Footer />
       </div>
     </>
   );

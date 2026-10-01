@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Github, Linkedin, Twitter, Mail, X } from "lucide-react";
 import GlassCard from "@/components/GlassCard";
 import SectionTitle from "@/components/SectionTitle";
+import SEO from "@/components/SEO";
+import Footer from "@/components/Footer";
 import {
   Dialog,
   DialogContent,
@@ -348,12 +350,18 @@ const Executive = () => {
 
 
   return (
-    <div className="min-h-screen pt-24 pb-20">
-      <div className="container mx-auto px-6">
-        <SectionTitle
-          title="EXECUTIVE COMMITTEE"
-          subtitle="Meet the team behind SCPSC Cyber Hub"
-        />
+    <>
+      <SEO 
+        title="Executive Committee - SCPSC Cyber Hub"
+        description="Meet the dedicated leaders and executives of SCPSC Cyber Hub driving innovation and technological excellence."
+        keywords="SCPSC Cyber Hub executive committee, student leaders, tech club administration, executive panel Bangladesh"
+      />
+      <div className="min-h-screen pt-24 pb-20">
+        <div className="container mx-auto px-6">
+          <SectionTitle
+            title="EXECUTIVE COMMITTEE"
+            subtitle="Meet the team behind SCPSC Cyber Hub"
+          />
 
         <div className="flex justify-center gap-4 mb-12">
           <button
@@ -581,7 +589,9 @@ const Executive = () => {
           )}
         </DialogContent>
       </Dialog>
+      <Footer />
     </div>
+    </>
   );
 };
 
